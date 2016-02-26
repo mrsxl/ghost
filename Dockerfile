@@ -32,8 +32,10 @@ RUN buildDeps=' \
 	&& set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	#&& curl -sSL "https://ghost.org/archives/ghost-${GHOST_VERSION}.zip" -o ghost.zip \
-	&& curl -sSL "https://github.com/toboos/ghost-zh.git" -o ghost.zip \
+	&& curl -sSL "https://github.com/toboos/ghost-zh/archive/master.zip" -o ghost.zip \
 	&& unzip ghost.zip \
+	&& mv ./ghost-zh-master/* ./ \
+	&& rm -rf /ghost-zh-master \
 	&& npm install --production \
 	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps \
 	&& rm -rf ghost.zip \
