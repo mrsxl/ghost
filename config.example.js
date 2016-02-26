@@ -11,7 +11,7 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://ghostcourse.daoapp.io',
+        url: 'http://mrsong.daoapp.io',
         mail: {},
         database: {
             client: 'mysql',
